@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --red: #ff244b;
+    --red-dark: #8b001e;
+    --background: #050508;
+    --white: #f5f2f3;
+    --muted: #89858a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--background);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background:
+        radial-gradient(ellipse at 50% 48%, #290812 0%, #10050a 40%, #050508 85%);
+}
+
+#particles {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.background-grid {
+    position: fixed;
+    inset: 0;
+    opacity: .08;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+
+    background-size: 55px 55px;
+
+    mask-image: radial-gradient(ellipse, black, transparent 75%);
+}
+
+.vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse, transparent 15%, rgba(0,0,0,.8) 100%);
+}
+
+.top-interface,
+.bottom-interface {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    width: 100%;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-interface {
+    top: 0;
+}
+
+.bottom-interface {
+    bottom: 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #686268;
+}
+
+.brand {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #aaa;
+}
+
+.sound-button {
+    border: 1px solid #ffffff33;
+    background: #ffffff08;
+    color: white;
+    padding: 10px 15px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#experience {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 25px;
+    text-align: center;
+    animation: screenEnter 1s ease both;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes screenEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* INTRO */
+
+.intro-decoration {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 35px;
+}
+
+.intro-decoration span {
+    width: 35px;
+    height: 2px;
+    background: var(--red);
+    box-shadow: 0 0 12px var(--red);
+}
+
+.eyebrow,
+.chapter-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--red);
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(32px, 6.5vw, 76px);
+    line-height: 1.25;
+    font-weight: 900;
+    max-width: 1000px;
+    margin: 30px auto;
+    text-shadow: 0 0 35px #ff173d30;
+}
+
+h1 span {
+    display: block;
+    color: var(--red);
+}
+
+.intro-description {
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    margin-top: 40px;
+    padding: 18px 27px;
+
+    background: linear-gradient(110deg, #a40024, #ed1740);
+    border: 1px solid #ff526d;
+
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 30px #ff173d25;
+
+    transition: .35s;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 45px #ff173d75;
+}
+
+.arrow {
+    font-size: 18px;
+}
+
+.intro-footer {
+    margin-top: 60px;
+    color: #777;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+/* STORY */
+
+#story {
+    flex-direction: column;
+    gap: 12px;
+}
+
+.story-top {
+    width: min(550px, 90%);
+    margin-bottom: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #aaa;
+}
+
+.progress-track {
+    height: 2px;
+    margin-top: 15px;
+    background: #ffffff20;
+}
+
+#progressBar {
+    width: 14%;
+    height: 100%;
+    background: var(--red);
+    box-shadow: 0 0 12px var(--red);
+    transition: width 1s ease;
+}
+
+.heart-scene {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 5px auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart-glow {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background: #ff173d;
+    filter: blur(65px);
+    opacity: .3;
+    animation: glowPulse 3s infinite alternate;
+}
+
+@keyframes glowPulse {
+    from {
+        transform: scale(.8);
+        opacity: .2;
+    }
+
+    to {
+        transform: scale(1.4);
+        opacity: .45;
+    }
+}
+
+#heart {
+    position: relative;
+    width: 155px;
+    overflow: visible;
+    filter: drop-shadow(0 0 12px #ff173d88);
+}
+
+.heart-left,
+.heart-right {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 1.4s cubic-bezier(.2,.8,.2,1);
+}
+
+.heart-crack {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    opacity: .9;
+}
+
+#heart.broken .heart-left {
+    transform: translate(-16px, 5px) rotate(-12deg);
+}
+
+#heart.broken .heart-right {
+    transform: translate(16px, 5px) rotate(12deg);
+}
+
+.heart-caption {
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: #ff7188;
+}
+
+.story-content {
+    max-width: 720px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.chapter-label {
+    font-size: 8px;
+    margin-bottom: 20px;
+}
+
+#storyTitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(21px, 4vw, 37px);
+    margin-bottom: 20px;
+    color: white;
+}
+
+#storyText {
+    max-width: 650px;
+    margin: auto;
+    color: #c6c0c3;
+    font-size: clamp(13px, 1.5vw, 16px);
+    line-height: 2;
+    font-weight: 300;
+}
+
+/* ENDING */
+
+#ending {
+    overflow-y: auto;
+}
+
+.ending-symbol {
+    margin-bottom: 15px;
+}
+
+.ending-heart {
+    font-size: 65px;
+    filter: drop-shadow(0 0 20px #ff173d);
+    animation: endingPulse 2s infinite;
+}
+
+@keyframes endingPulse {
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+#ending h1 {
+    font-size: clamp(27px, 5vw, 60px);
+    margin: 20px auto;
+}
+
+.ending-message {
+    max-width: 620px;
+    color: #c7c0c4;
+    font-size: 15px;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.ending-divider {
+    width: 70px;
+    height: 2px;
+    background: var(--red);
+    margin: 30px auto;
+    box-shadow: 0 0 15px var(--red);
+}
+
+#ending h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(12px, 2vw, 17px);
+    letter-spacing: 2px;
+    color: var(--red);
+}
+
+.ending-small {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+
+    .screen {
+        padding: 80px 22px;
+    }
+
+    .top-interface,
+    .bottom-interface {
+        padding: 18px;
+    }
+
+    .brand {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .bottom-interface {
+        font-size: 6px;
+    }
+
+    .heart-scene {
+        width: 145px;
+        height: 145px;
+    }
+
+    #heart {
+        width: 125px;
+    }
+
+    #storyText {
+        line-height: 1.8;
+    }
+
+    .main-button {
+        padding: 16px 20px;
+        font-size: 9px;
+    }
+
+    .intro-footer {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+}
+
+@media(max-height: 650px) {
+
+    .screen {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .heart-scene {
+        transform: scale(.75);
+        margin: -10px auto;
+    }
+
+    #storyTitle {
+        margin-bottom: 12px;
+    }
+
+    #storyText {
+        line-height: 1.6;
+    }
+
+    .main-button {
+        margin-top: 20px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}

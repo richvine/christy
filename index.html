@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#050508">
+
+    <title>A Game That Changed Everything</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- BACKGROUND EFFECTS -->
+    <canvas id="particles"></canvas>
+
+    <div class="background-grid"></div>
+    <div class="vignette"></div>
+
+    <!-- BACKGROUND MUSIC -->
+    <audio
+        id="backgroundMusic"
+        src="music.mp3"
+        loop
+        preload="auto">
+    </audio>
+
+    <!-- SOUND CONTROL -->
+    <button id="soundButton" class="sound-button" type="button">
+        ♫ SOUND ON
+    </button>
+
+    <!-- INTRO SCREEN -->
+    <section id="intro" class="screen intro-screen">
+
+        <div class="intro-content">
+
+            <div class="top-label">
+                A STORY ABOUT US
+            </div>
+
+            <h1>
+                A GAME THAT
+                <span>CHANGED EVERYTHING</span>
+            </h1>
+
+            <div class="intro-line"></div>
+
+            <p class="intro-description">
+                Sometimes it's never really about the game.
+            </p>
+
+            <button id="startButton" class="main-button" type="button">
+                ENTER THE STORY
+                <span>→</span>
+            </button>
+
+            <div class="bottom-note">
+                PLEASE READ UNTIL THE END
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STORY SCREEN -->
+    <section id="story" class="screen story-screen hidden">
+
+        <div class="story-container">
+
+            <div class="story-top">
+
+                <span id="chapterNumber">
+                    CHAPTER 01 / 07
+                </span>
+
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+
+            </div>
+
+            <!-- HEART -->
+            <div class="heart-container">
+
+                <svg
+                    id="heart"
+                    class="broken-heart"
+                    viewBox="0 0 200 180"
+                    xmlns="http://www.w3.org/2000/svg">
+
+                    <path
+                        d="M100 165
+                        C85 150 20 105 20 60
+                        C20 20 70 5 100 45
+                        C130 5 180 20 180 60
+                        C180 105 115 150 100 165Z"
+                        fill="none"
+                        stroke="#ff365f"
+                        stroke-width="3"/>
+
+                    <path
+                        d="M100 45
+                        L85 75
+                        L105 90
+                        L88 115
+                        L110 130
+                        L100 165"
+                        fill="none"
+                        stroke="#ff365f"
+                        stroke-width="3"/>
+
+                </svg>
+
+            </div>
+
+            <div class="story-content">
+
+                <h2 id="storyTitle">
+                    IT WAS ONLY A GAME
+                </h2>
+
+                <p id="storyText">
+                    At first, it was just Call of Duty.
+                </p>
+
+            </div>
+
+            <button id="nextButton" class="main-button" type="button">
+                CONTINUE
+                <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ENDING SCREEN -->
+    <section id="ending" class="screen ending-screen hidden">
+
+        <div class="ending-content">
+
+            <div class="ending-label">
+                THE END
+            </div>
+
+            <h1>
+                IT WAS NEVER JUST
+                <span>ABOUT THE GAME</span>
+            </h1>
+
+            <div class="ending-line"></div>
+
+            <p class="ending-message">
+                I don't expect everything to be perfect.
+                I just believe that honesty should be simple,
+                respect should be natural, and something meant
+                to be enjoyable shouldn't constantly become
+                a reason to fight.
+            </p>
+
+            <h2>
+                LIFE IS BIGGER THAN CALL OF DUTY.
+            </h2>
+
+            <p class="ending-final">
+                Some things aren't worth losing peace over.
+            </p>
+
+            <button id="replayButton" class="main-button" type="button">
+                READ AGAIN
+                <span>↻</span>
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
